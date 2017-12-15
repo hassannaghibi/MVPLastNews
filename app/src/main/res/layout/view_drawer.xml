@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/drawer_rel_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_xxxxlarge"
+        android:background="@drawable/frame_shadow"
+        android:gravity="right"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/drawer_img_logo"
+            android:layout_width="@dimen/drawer_avatar"
+            android:layout_height="@dimen/drawer_avatar"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/drawer_txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xxlarge"
+            android:layout_toLeftOf="@+id/drawer_img_logo"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/txt_size_large" />
+
+        <ImageView
+            android:id="@+id/drawer_img_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:visibility="gone"
+            android:layout_below="@+id/drawer_txt_name"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_toLeftOf="@+id/drawer_img_logo" />
+
+        <TextView
+            android:id="@+id/drawer_txt_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/drawer_img_phone"
+            android:layout_alignTop="@+id/drawer_img_phone"
+            android:layout_below="@+id/drawer_txt_name"
+            android:layout_toLeftOf="@+id/drawer_img_phone"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textColor="#3d3c3c"
+            android:textSize="@dimen/txt_size_large" />
+
+        <ImageView
+            android:id="@+id/drawer_img_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/drawer_txt_mobile"
+            android:layout_toLeftOf="@+id/drawer_img_logo"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/drawer_rel_footer"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_below="@+id/drawer_txt_mobile"
+            android:layout_height="@dimen/drawer_footer">
+
+            <ImageView
+                android:id="@+id/drawer_img_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_logout" />
+
+            <TextView
+                android:id="@+id/drawer_txt_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/drawer_img_logout"
+                android:layout_alignTop="@+id/drawer_img_logout"
+                android:layout_marginRight="@dimen/margin_xlarge"
+                android:layout_toRightOf="@+id/drawer_img_logout"
+                android:gravity="center"
+                android:text="@string/drawer_logout"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_size_medium"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/drawer_scrol_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/drawer_rel_header"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/drawer_item_payment"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginLeft="@dimen/margin_small"-->
+                <!--android:layout_marginRight="@dimen/margin_small"-->
+                <!--android:padding="@dimen/margin_large">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/drawer_img_payment"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:src="@drawable/ic_payment" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/drawer_txt_payment"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignBottom="@+id/drawer_img_payment"-->
+                    <!--android:layout_alignTop="@+id/drawer_img_payment"-->
+                    <!--android:layout_marginRight="@dimen/margin_xlarge"-->
+                    <!--android:layout_toLeftOf="@+id/drawer_img_payment"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="@string/drawer_payment"-->
+                    <!--android:textColor="@color/colorGrayDark"-->
+                    <!--android:textSize="@dimen/txt_size_large" />-->
+
+            <!--</RelativeLayout>-->
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>
