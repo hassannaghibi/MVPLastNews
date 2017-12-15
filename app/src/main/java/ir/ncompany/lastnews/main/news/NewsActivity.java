@@ -61,27 +61,11 @@ public class NewsActivity extends AppCompatActivity implements NewsView, Navigat
 
     private void init() {
         mainImgDrawer.setOnClickListener(this);
+        fab.setOnClickListener(this);
 
         newsPresenter = new NewsPresenterImpl(this);
         showDialogLoading();
         newsPresenter.sendOrGetDataFromServer("getNews", rootview);
-
-        //set click fab button
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isSport) {
-                    isSport = false;
-                    newsPresenter.sendOrGetDataFromServer("getSport", rootview);
-                    fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_news_white));
-                } else {
-                    isSport = true;
-
-                    newsPresenter.sendOrGetDataFromServer("getNews", rootview);
-                    fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_sport_white));
-                }
-            }
-        });
 
         constrant_rc.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -188,18 +172,18 @@ public class NewsActivity extends AppCompatActivity implements NewsView, Navigat
     }
 
     public void OpenCloseDrawer() {
-        if (drawer.isDrawerOpen(GravityCompat.END)) {
-            drawer.closeDrawer(GravityCompat.END);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
         } else {
-            drawer.openDrawer(GravityCompat.END);
+            drawer.openDrawer(GravityCompat.START);
         }
     }
 
     @Override
     public void onBackPressed() {
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.END)) {
-            drawer.closeDrawer(GravityCompat.END);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
@@ -211,6 +195,18 @@ public class NewsActivity extends AppCompatActivity implements NewsView, Navigat
             case R.id.main_img_drawer: {
                 OpenCloseDrawer();
             }
+            break;
+            case R.id.fab: {
+                if (isSport) {
+                    isSport = false;
+                    newsPresenter.sendOrGetDataFromServer("getSport", rootview);
+                    fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_news_white));
+                } else {
+                    isSport = true;
+
+                    newsPresenter.sendOrGetDataFromServer("getNews", rootview);
+                    fab.setImageDrawable(getResources().getDrawable(R.drawable.ic_sport_white));
+                }            }
             break;
         }
     }

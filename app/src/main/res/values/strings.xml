@@ -10,6 +10,6 @@
     <string name="main_content_nodata">No data to display :( </string>
 
     <!--activity main-->
-    <string name="drawer_logout">خروج از حساب</string>
+    <string name="drawer_logout">Logout</string>
 
 </resources>
